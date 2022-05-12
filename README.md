@@ -50,7 +50,8 @@ It is evident that there is multicolinearity within the dataset so independant v
 ```Python
 statcast = statcast.drop(columns=['vy0','vx0','vz0', 'spin_axis','pitch_number','ax','ay','az','at_bat_number', 'description'])
 ```
-The resulting heatmap is shown below
+The resulting heatmap is shown below<br />
+
 <img src="heatmap2.png" width="600" height="400" alt="hi" class="inline"/>
 
 
