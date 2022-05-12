@@ -44,8 +44,14 @@ fig_dims = (12,8)
 fig, ax = plt.subplots(figsize = fig_dims)
 sns.heatmap(statcast.corr(), ax=ax)
 ```
-<img src="Assets/IMG_2469.jpeg" width="400" height="600" alt="hi" class="inline"/>
+<img src="heatmap1.png" width="600" height="400" alt="hi" class="inline"/>
 
+It is evident that there is multicolinearity within the dataset so independant variables are removed: vy0, vx0, vz0, spin_axis, pitch_number, ax, ay , az, at_bat_number, description. 
+```Python
+statcast = statcast.drop(columns=['vy0','vx0','vz0', 'spin_axis','pitch_number','ax','ay','az','at_bat_number', 'description'])
+```
+The resulting heatmap is shown below
+<img src="heatmap2.png" width="600" height="400" alt="hi" class="inline"/>
 
 
 
