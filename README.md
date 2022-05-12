@@ -137,9 +137,118 @@ y = labelencoder_y.fit_transform(y)
 Now all the set up is complete
 
 ### Building and Running Models
+Five different classification methods were used on the data to test which is the most efficient and effective at classifying the type of pitch. The following section displays the code that was used to construct and test each model. Each model uses what is thought to be the optimal hyperparameters after testing the models multiple times using different values. The findings of each model will be under Results which is the section below.
+
 #### Decision Tree
+```Python
+model_tree = tree.DecisionTreeClassifier(max_depth=3)
+kf = KFold(n_splits=10,shuffle=True,random_state=1234)
+scale = StandardScaler()
+x_scaled = scale.fit_transform(x)
+model_tree = tree.DecisionTreeClassifier(max_depth=5)
+tree_score = []
 
 
+for idxtrain, idxtest in kf.split(x_scaled):
+  xtrain = x[idxtrain]
+  ytrain = y[idxtrain]
+  ytest = y[idxtest]
+  xtest = x[idxtest]
+  xtrain = scale.fit_transform(xtrain)
+  xtest = scale.transform(xtest)
+  model_tree.fit(xtrain,ytrain)
+  score = model_tree.score(xtest,ytest)
+  tree_score.append(score)
+ ```
+ ```Python
+xtrain, xtest, ytrain, ytest = tts(x_scaled,y,train_size =.3,random_state=1234)
+model_tree.fit(xtrain,ytrain)
+from sklearn.metrics import confusion_matrix
+y_pred_tree = model_tree.predict(xtest)
+confusion_matrix(ytest, y_pred_tree)
+```
+
+#### Random Forest
+```Python
+model_rf = rf(n_estimators = 100, max_depth=5)
+rf_score = []
+for idxtrain, idxtest in kf.split(x_scaled):
+  xtrain = x[idxtrain]
+  ytrain = y[idxtrain]
+  ytest = y[idxtest]
+  xtest = x[idxtest]
+  xtrain = scale.fit_transform(xtrain)
+  xtest = scale.transform(xtest)
+  model_rf.fit(xtrain,ytrain)
+  score = model_rf.score(xtest,ytest)
+  rf_score.append(score)
+```
+```Python
+xtrain, xtest, ytrain, ytest = tts(x_scaled,y,train_size =.3,random_state=1234)
+y_pred_rf = model_rf.predict(xtest)
+```
+
+#### Gradient Bossted Classifier
+```Python
+model_gbc = gbc(n_estimators=100)
+
+gbc_score = []
+for idxtrain, idxtest in kf.split(x_scaled):
+  xtrain = x[idxtrain]
+  ytrain = y[idxtrain]
+  ytest = y[idxtest]
+  xtest = x[idxtest]
+  xtrain = scale.fit_transform(xtrain)
+  xtest = scale.transform(xtest)
+  model_gbc.fit(xtrain,ytrain)
+  score = model_gbc.score(xtest,ytest)
+  gbc_score.append(score)
+```
+```Python
+xtrain, xtest, ytrain, ytest = tts(x_scaled,y,train_size =.3,random_state=1234)
+y_pred_gbc = model_gbc.predict(xtest)
+```
+
+#### Naive Bayes
+```Python
+model_nb = GaussianNB()
+nb_score = []
+for idxtrain, idxtest in kf.split(x_scaled):
+  xtrain = x[idxtrain]
+  ytrain = y[idxtrain]
+  ytest = y[idxtest]
+  xtest = x[idxtest]
+  xtrain = scale.fit_transform(xtrain)
+  xtest = scale.transform(xtest)
+  model_nb.fit(xtrain,ytrain)
+  score = model_nb.score(xtest,ytest)
+  nb_score.append(score)
+```
+```Python
+xtrain, xtest, ytrain, ytest = tts(x_scaled,y,train_size =.3,random_state=1234)
+y_pred_nb = model_nb.predict(xtest)
+```
+
+#### K Nearest Neighbors
+```Python
+from sklearn.neighbors import KNeighborsClassifier as knn
+model_knn = knn(n_neighbors=5,weights="uniform")
+knn_score = []
+for idxtrain, idxtest in kf.split(x_scaled):
+  xtrain = x[idxtrain]
+  ytrain = y[idxtrain]
+  ytest = y[idxtest]
+  xtest = x[idxtest]
+  xtrain = scale.fit_transform(xtrain)
+  xtest = scale.transform(xtest)
+  model_knn.fit(xtrain,ytrain)
+  score = model_knn.score(xtest,ytest)
+  knn_score.append(score)
+  ```
+  ```Python
+xtrain, xtest, ytrain, ytest = tts(x_scaled,y,train_size =.3,random_state=1234)
+y_pred_knn = model_knn.predict(xtest)
+```
 
 
 ### References 
