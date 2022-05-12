@@ -413,6 +413,9 @@ weighted avg       0.62      0.68      0.64      2000
 weighted avg       0.91      0.91      0.90      2000
 ```
  ## Conclusion and Analysis
+In general all of the models were able to preform relatively well to some degree. They all got a majority of classfications correct. All of the models seemed to have the most trouble differentiating between sliders and curveballs. This makes some intuitive sense as these two types of pitches are pretty similar. What is a little surprising however, is that some models had trouble differentiating between the splitter and the knuckle curve pitches. These pitches arent very similar to eachother so its a little confusing as to why the models struggled with classifying them. Of all the models the Naives Bayes preformed the worse. The score of the model was .74 which is decent but when taking a look at the classification report and confusion matrix it can been seen that the model didnt classisy a single pitch as a Curveball and instead said that all the curveballs were either, sliders, fastballs or sinkers. Random Forest and KNN preformed very well both having scores above .80 and average precisions at or above 0.90. Both of these models were able to differentiate between curveballs and sliders very well which is what seperated them from the decisions tree model and the naive bayes model. However, the best preforming model was the gradient boosted classfier.
+
+
 
 ### References 
 Data
