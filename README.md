@@ -19,7 +19,7 @@ Although there are many variables in the data set there are ones that I belive w
 There are also some variables in the data set that I cannot tell what they mean. 
 
 ### Methods
-This dataset had over 75,000 observation to work with and additionally there is significant class imbalance this distribution of the target variable is as follow
+This dataset had over 75,000 observation to work with and additionally there is slight class imbalance as the distribution of the target variable is as follows:
 
 Fastball: 35.9% <br />
 Slider: 19.8%<br />
@@ -29,6 +29,8 @@ Curveball: 9.3%<br />
 Cutter: 7.2%<br />
 Knuckle-Curve: 1.8%<br />
 Splitter: 1.2%<br />
+
+
 
 ### References 
 Data
