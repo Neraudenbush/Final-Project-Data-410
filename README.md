@@ -19,7 +19,33 @@ Although there are many variables in the data set there are ones that I belive w
 There are also some variables in the data set that I cannot tell what they mean. 
 
 ### Methods
-This dataset had over 75,000 observation to work with and additionally there is slight class imbalance as the distribution of the target variable is as follows:
+Before getting into coding for the project, all the necessary packages must be imported
+```Python
+import pandas as pd
+import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.ensemble import RandomForestClassifier as rf
+from sklearn import tree
+from sklearn.model_selection import KFold, train_test_split as tts
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier as rf, GradientBoostingClassifier as gbc
+from sklearn.metrics import classification_report
+from imblearn.over_sampling import SMOTE
+from imblearn.over_sampling import ADASYN 
+```
+This dataset had over 75,000 observation to work with which is very large so a random sample of 1000 was taken to make the runtimes shorter and the data in general easier to work with 
+```Python
+statcast_initial = pd.read_csv("Statcast_2021.csv")
+statcast = statcast_initial.sample(n=1000)
+```
+
+
+
+
+
+
+and additionally there is slight class imbalance as the distribution of the target variable is as follows:
 
 Fastball: 35.9% <br />
 Slider: 19.8%<br />
