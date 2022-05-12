@@ -1,6 +1,5 @@
 # Final-Project-Data-410
-# Data-410-Rsearch-Proposal-Draft
-Draft of the proposal for final research project in DATA 410
+Final Research Project in DATA 410
 
 ### Introduction 
 One aspect of data science that interests me a lot is its cross over between sports. One of the fields I would really like to go into as a career is using data to model and predict to help professional baseball teams optimize their results. For this reason, I have elected to do my final research using Data from Major League Baseball (MLB). In 2015 the MLB introduced _Statcast_. 
