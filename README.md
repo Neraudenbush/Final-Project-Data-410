@@ -21,14 +21,14 @@ There are also some variables in the data set that I cannot tell what they mean.
 ### Methods
 This dataset had over 75,000 observation to work with and additionally there is significant class imbalance this distribution of the target variable is as follow
 
-Fastball: 35.9%
-Slider: 19.8%
-Sinker: 14.5%
-Changeup: 10.5%
-Curveball: 9.3%
-Cutter: 7.2%
-Knuckle-Curve: 1.8%
-Splitter: 1.2%
+Fastball: 35.9% <br />
+Slider: 19.8%<br />
+Sinker: 14.5%<br />
+Changeup: 10.5%<br />
+Curveball: 9.3%<br />
+Cutter: 7.2%<br />
+Knuckle-Curve: 1.8%<br />
+Splitter: 1.2%<br />
 
 ### References 
 Data
