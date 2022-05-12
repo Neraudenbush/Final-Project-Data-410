@@ -32,13 +32,20 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier as rf, GradientBoostingClassifier as gbc
 from sklearn.metrics import classification_report
 from imblearn.over_sampling import SMOTE
-from imblearn.over_sampling import ADASYN 
 ```
 This dataset had over 75,000 observation to work with which is very large so a random sample of 1000 was taken to make the runtimes shorter and the data in general easier to work with 
 ```Python
 statcast_initial = pd.read_csv("Statcast_2021.csv")
 statcast = statcast_initial.sample(n=1000)
 ```
+Even after roving data certain variables before loading the data into python, there still may be some independant variables that are correlated with eachother in the dataframe. This is refered to as multicolinearity. In order to prevent this a heatmap is created to determine which variables are correlated and must be removed. 
+```Python
+fig_dims = (12,8)
+fig, ax = plt.subplots(figsize = fig_dims)
+sns.heatmap(statcast.corr(), ax=ax)
+```
+<img src="Assets/IMG_2469.jpeg" width="400" height="600" alt="hi" class="inline"/>
+
 
 
 
