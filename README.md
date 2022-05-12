@@ -265,6 +265,7 @@ y_pred_knn = model_knn.predict(xtest)
  [  0  54   0   0   0   0   0 204]
  ```
  #### Classification Report 
+ ```Markdown
                precision    recall  f1-score   support
 
            0       0.89      0.75      0.82       250
@@ -279,7 +280,7 @@ y_pred_knn = model_knn.predict(xtest)
     accuracy                           0.67      2000
    macro avg       0.70      0.67      0.66      2000
 weighted avg       0.70      0.67      0.66      2000
-
+```
 ### Random Forest
 #### Score
 0.872546926757453
@@ -296,6 +297,7 @@ weighted avg       0.70      0.67      0.66      2000
  ```
 
 #### Classification Report
+```Markdown
                precision    recall  f1-score   support
 
            0       0.90      0.91      0.90       250
@@ -310,6 +312,7 @@ weighted avg       0.70      0.67      0.66      2000
     accuracy                           0.90      2000
    macro avg       0.90      0.90      0.90      2000
 weighted avg       0.90      0.90      0.90      2000
+```
 
 ### Gradient Boosted Classifier
 #### Score
@@ -327,6 +330,7 @@ weighted avg       0.90      0.90      0.90      2000
  ```
  
  #### Classification Report
+ ```Markdown
                precision    recall  f1-score   support
 
            0       0.98      0.96      0.97       250
@@ -341,7 +345,7 @@ weighted avg       0.90      0.90      0.90      2000
     accuracy                           0.97      2000
    macro avg       0.97      0.97      0.97      2000
 weighted avg       0.97      0.97      0.97      2000
-
+```
 ### Naive Bayes
 #### Score
 0.7440363145626303
@@ -359,6 +363,7 @@ weighted avg       0.97      0.97      0.97      2000
  ```
  
 #### Classification Report
+```Markdown
               precision    recall  f1-score   support
 
            0       0.86      0.89      0.87       250
@@ -373,7 +378,7 @@ weighted avg       0.97      0.97      0.97      2000
     accuracy                           0.68      2000
    macro avg       0.62      0.68      0.64      2000
 weighted avg       0.62      0.68      0.64      2000
-
+```
 ### K Nearest Neighbors
 #### Score
 0.8322622991044044
@@ -389,6 +394,23 @@ weighted avg       0.62      0.68      0.64      2000
  [  4   5  11  32   6   4 178   1]
  [  0   0   0   0   0   0   0 258]
  
+```
+#### Classification Report
+```Markdown
+              precision    recall  f1-score   support
+
+           0       0.89      0.71      0.79       250
+           1       0.92      0.98      0.95       263
+           2       0.96      0.96      0.96       255
+           3       0.81      0.98      0.88       244
+           4       0.95      1.00      0.98       248
+           5       0.82      0.88      0.85       241
+           6       0.95      0.74      0.83       241
+           7       0.98      1.00      0.99       258
+
+    accuracy                           0.91      2000
+   macro avg       0.91      0.91      0.90      2000
+weighted avg       0.91      0.91      0.90      2000
 ```
  ## Conclusion and Analysis
 
