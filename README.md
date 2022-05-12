@@ -188,7 +188,7 @@ xtrain, xtest, ytrain, ytest = tts(x_scaled,y,train_size =.3,random_state=1234)
 y_pred_rf = model_rf.predict(xtest)
 ```
 
-#### Gradient Bossted Classifier
+#### Gradient Boosted Classifier
 ```Python
 model_gbc = gbc(n_estimators=100)
 
@@ -249,6 +249,36 @@ for idxtrain, idxtest in kf.split(x_scaled):
 xtrain, xtest, ytrain, ytest = tts(x_scaled,y,train_size =.3,random_state=1234)
 y_pred_knn = model_knn.predict(xtest)
 ```
+## Results
+### Desicion Tree
+#### Score
+0.748249294565084
+#### Confusion Matrix
+```Markdown
+[[188   4   0   9   0  45   4   0]
+ [  6 199   0   0   5   8  30  15]
+ [  0  16 156   0  59   0  24   0]
+ [  9  16   0  29   0  14 176   0]
+ [  0   0  24   0 214   0  10   0]
+ [  6  37   0  21   0 156  21   0]
+ [  2  27   6   2   7   0 197   0]
+ [  0  54   0   0   0   0   0 204]]
+ ```
+ #### Summary 
+               precision    recall  f1-score   support
+
+           0       0.89      0.75      0.82       250
+           1       0.56      0.76      0.65       263
+           2       0.84      0.61      0.71       255
+           3       0.48      0.12      0.19       244
+           4       0.75      0.86      0.80       248
+           5       0.70      0.65      0.67       241
+           6       0.43      0.82      0.56       241
+           7       0.93      0.79      0.86       258
+
+    accuracy                           0.67      2000
+   macro avg       0.70      0.67      0.66      2000
+weighted avg       0.70      0.67      0.66      2000
 
 
 ### References 
